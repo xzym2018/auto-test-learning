@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "示例 Collection（脱敏模板）",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "演示变量化写法：域名用 {{base_url}}，凭证用 {{token}}，真实值放 Environment 或 .env，绝不硬编码入库。"
+  },
+  "variable": [
+    { "key": "base_url", "value": "https://api.example.com" },
+    { "key": "token", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "示例-GET 列表",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "{{token}}" },
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/resource/", "host": ["{{base_url}}"], "path": ["api", "resource", ""] }
+      }
+    },
+    {
+      "name": "示例-POST 创建",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "{{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"demo\"\n}" },
+        "url": { "raw": "{{base_url}}/api/resource/", "host": ["{{base_url}}"], "path": ["api", "resource", ""] }
+      }
+    }
+  ]
+}

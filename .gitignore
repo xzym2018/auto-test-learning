@@ -1,0 +1,22 @@
+# 环境与密钥（绝不入库）
+.env
+*.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 测试产物
+*_results.json
+test_results*.json
+api_test_results.json
+test_evidence*/
+
+# Obsidian 工作区状态（保留配置，忽略个人状态）
+.obsidian/workspace*
+.obsidian/cache
+
+# 系统文件
+Thumbs.db
+.DS_Store
